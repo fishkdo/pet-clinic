@@ -39,5 +39,16 @@ pipeline {
             }
         }
         
+        stage('Decide Deploy to Test'){
+    when {
+        branch 'master'
+    }
+    agent none
+    steps {
+        input message: 'Deploy to Test?'
+    }            
+}
+
+        
     }
 }
